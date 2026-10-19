@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Task Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Task Planner</h1>
+      <p class="sub">Plan by day, month or any custom date range.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="add">
+      <div class="full">
+        <label for="title">Task</label>
+        <input id="title" type="text" maxlength="140" placeholder="What needs to be done?">
+      </div>
+      <div>
+        <label for="start">Start / due date</label>
+        <input id="start" type="date">
+      </div>
+      <div>
+        <label for="end">End date (optional)</label>
+        <input id="end" type="date">
+      </div>
+      <div>
+        <label for="prio">Priority</label>
+        <select id="prio">
+          <option value="high">High</option>
+          <option value="medium" selected>Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div style="display:flex;align-items:end">
+        <button class="primary" id="addBtn" style="width:100%">Add task</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tabs" id="tabs">
+      <button data-mode="day" class="on">Daily</button>
+      <button data-mode="month">Monthly</button>
+      <button data-mode="custom">Custom</button>
+    </div>
+
+    <div class="nav" id="nav"></div>
+
+    <div class="stats">
+      <span id="count">0 of 0 done</span>
+      <div class="bar"><i id="fill"></i></div>
+    </div>
+
+    <div class="filters" id="filters">
+      <button data-f="all" class="on">All</button>
+      <button data-f="active">Active</button>
+      <button data-f="done">Done</button>
+    </div>
+
+    <div id="list"></div>
+    <button class="link" id="clearDone">Clear completed in this view</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
